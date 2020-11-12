@@ -4,7 +4,7 @@ from django.db import models
 
 from apps.acudiente.models import persona
 
-class antecedentes_medicos(models.Model):
+class antecedentes_medico(models.Model):
     descripcion = models.TextField()
 
     def __str__(self) -> str:
@@ -18,7 +18,7 @@ class Alumna(models.Model):
 
     IDENTIFICACION = [
         ('RE', 'Registro Civil'),
-        ('TI', 'Targeta Identidad'),
+        ('TI', 'Tarjeta Identidad'),
         ('CE', 'Cedula'),
     ]
     
@@ -65,6 +65,22 @@ class Alumna(models.Model):
         ('E', 'Externa'),
     ]
 
+    HOBBY = [
+        ('BA', 'Bailar'),
+        ('CA', 'Cantar'),
+        ('FU', 'Jugar Futbol'),
+        ('BO', 'Jugar Boleybol'),
+        ('BAS', 'Jugar Baloncesto'),
+        ('AJ', 'Jugar Ajedrez'),
+        ('CI', 'Ir Cine'),
+        ('MU', 'Escuchar Musica'),
+        ('PA', 'Patinar'),
+        ('VI', 'Viajar'),
+        ('LE', 'Leer'),
+        ('DI', 'Dibujar'),
+        ('OT', 'Otro'),
+    ]
+
     codigo = models.CharField(max_length=10,primary_key=True)
     nombres = models.CharField(max_length=50)
     apellidos = models.CharField(max_length=70)
@@ -82,9 +98,9 @@ class Alumna(models.Model):
     eps = models.CharField(max_length=20)
     arl = models.CharField(max_length=20)
     grupo_rh = models.CharField(max_length=10, choices=GRUPO)
-    hobby = models.CharField(max_length=20)
+    hobby = models.CharField(max_length=20, choices=HOBBY)
     persona = models.ForeignKey(persona, null = True, blank= True, on_delete = models.CASCADE)
-    antecedentes_medicos = models.ManyToManyField(antecedentes_medicos)
+    antecedentes_medico = models.ManyToManyField(antecedentes_medico)
 
     def __str__(self) -> str:
         return self.nombres + '  ' + self.apellidos + ' - ' + str(self.codigo)
