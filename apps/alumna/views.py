@@ -8,4 +8,4 @@ from django.http import HttpResponse
    # return render(request, "pestañaNoticias.html")
 
 def index(request):
-    return HttpResponse("index")
+    return HttpResponse("EN ESTE MODULO PUEDEN DESCARGAR SUS GUIAS Y ACTIVIDADES")

@@ -8,4 +8,4 @@ from django.http import HttpResponse
    # return render(request, "pestañaNoticias.html")
 
 def index_acudiente(request):
-    return HttpResponse("Pagina principal de Acudientes")
+    return HttpResponse("PAGINA PRINCIPAL DE ACUDIENTES")
