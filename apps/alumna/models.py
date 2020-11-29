@@ -56,7 +56,7 @@ class Alumna(models.Model):
         ('DEC', 'Decimo C'),
         ('ONA', 'Once A'),
         ('ONB', 'Once B'),
-        ('ONC', 'Oce C'),
+        ('ONC', 'Once C'),
 
     ]
 
